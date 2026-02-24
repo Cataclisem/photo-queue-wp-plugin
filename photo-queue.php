@@ -19,12 +19,18 @@ if(!class_exists('photoQueue')) {
     class photoQueue {
 
         public function __construct() {
+
             define('PLUGIN_DIR', plugin_dir_path( __FILE__ ));
+            
+
+            // Load Carbon Fields
             require_once(PLUGIN_DIR . '/vendor/autoload.php');
         }
 
         public function activate() {
             include_once(PLUGIN_DIR . '/include/options-page.php');
+
+            include_once(PLUGIN_DIR . '/include/make_table.php');
         }
     }
 }
